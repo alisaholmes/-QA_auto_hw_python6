@@ -3,7 +3,6 @@ from datetime import time
 
 
 def test_dark_theme_by_time():
-
     current_time = datetime.time(hour=23)
 
     if time(hour=6) <= current_time < time(hour=22):
@@ -50,15 +49,14 @@ def test_find_suitable_user():
     ]
 
 
-    suitable_users = [user for user in users if user["name"] == "Olga"] [0]
-    assert suitable_users == {"name": "Olga", "age": 45}
+suitable_users = [user for user in users if user["name"] == "Olga"][0]
+assert suitable_users == {"name": "Olga", "age": 45}
 
-
-    suitable_users = [user for user in users if user["age"] < 20]
-    assert suitable_users == [
-        {"name": "Stanislav", "age": 15},
-        {"name": "Maria", "age": 18},
-    ]
+suitable_users = [user for user in users if user["age"] < 20]
+assert suitable_users == [
+    {"name": "Stanislav", "age": 15},
+    {"name": "Maria", "age": 18},
+]
 
 
 # Сделайте функцию, которая будет печатать
@@ -72,12 +70,13 @@ def test_find_suitable_user():
 # "Open Browser [Chrome]"
 
 
-
 def print_function_name_and_args(func, *args):
     func_name = func.__name__.replace('_', ' ').title()
     args_name = ", ".join([*args])
     print(f"{func_name} [{args_name}]")
     return f"{func_name} [{args_name}]"
+
+
 def test_readable_function():
     open_browser(browser_name="Chrome")
     go_to_companyname_homepage(page_url="https://companyname.com")
